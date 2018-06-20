@@ -1,0 +1,17 @@
+{
+    "name": "kaen98/my_framework",
+    "description": "An example of a modern PHP application bootstrapped without a framework.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "zhaokai",
+            "email": "zk@pcuu.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ExampleApp\\": "src/"
+        }
+    }
+}
