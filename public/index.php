@@ -13,8 +13,6 @@ use function FastRoute\simpleDispatcher;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-// $helloWorld = new \ExampleApp\HelloWorld();
-// $helloWorld->announce();
 
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->useAutowiring(false);
@@ -29,8 +27,10 @@ $routes = simpleDispatcher(function (RouteCollector $r) {
     $r->get('/hello', HelloWorld::class);
 });
 
-// 中间件调度器
 $middlewareQueue[] = new FastRoute($routes);
 $middlewareQueue[] = new RequestHandler();
+
 $requestHandler = new Relay($middlewareQueue);
 $requestHandler->handle(ServerRequestFactory::fromGlobals());
+
+

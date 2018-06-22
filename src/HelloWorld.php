@@ -10,4 +10,10 @@ class HelloWorld
         echo 'Hello, autoloaded world!';
         exit;
     }
+
+    public function announce(): void
+    {
+    	echo 'Hello, autoloaded world!';
+        exit;
+    }
 }
